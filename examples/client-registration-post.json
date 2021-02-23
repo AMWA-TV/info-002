@@ -1,0 +1,12 @@
+{
+  "client_name": "My Example Node",
+  "grant_types": [
+    "client_credentials"
+  ],
+  "jwks_uri": "https://node.example.com/jwks",
+  "response_types": [
+    "none"
+  ],
+  "scope": "registration",
+  "token_endpoint_auth_method": "private_key_jwt"
+}

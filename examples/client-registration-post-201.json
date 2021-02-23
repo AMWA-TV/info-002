@@ -1,0 +1,12 @@
+{
+  "client_id": "30baf617-1744-4c24-9baf-22351bec1a73",
+  "client_name": "My Example Node",
+  "client_id_issued_at": 1611940142,
+  "grant_types": [
+    "client_credentials"
+  ],
+  "jwks_uri": "https://node.example.com/jwks",
+  "response_types": [
+  ],
+  "token_endpoint_auth_method": "private_key_jwt"
+}
