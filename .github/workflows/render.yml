@@ -1,14 +1,12 @@
 name: Render
 on:
+  workflow_dispatch:
+
   push:
     branches:
-        - 'v[0-9]+.[0-9]+-dev'
-        - 'v[0-9]+.[0-9]+.x'
+        - main
         - 'publish-*'
-    tags:
-        - 'v[0-9]+.[0-9]+'
-        - 'v[0-9]+.[0-9]+.[0-9]+'
-  release:
+
 jobs:
   build:
     runs-on: ubuntu-latest
