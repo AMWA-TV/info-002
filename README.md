@@ -25,7 +25,3 @@ This repository holds the source for this Specification, part of the family of [
 ## Getting started
 
 There is more information about the NMOS Specifications and their GitHub repos at <https://specs.amwa.tv/nmos>.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzU3NzM3NTAsLTE0Njk1NzcyNjUsLT
-E3NTA0NTMxMzUsLTEzODgxOTQzMjVdfQ==
--->
