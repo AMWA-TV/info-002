@@ -10,15 +10,16 @@ This repository holds the source for this Specification, part of the family of [
 ### What does it do?
 
 - It's a guide for implementers who want to add NMOS Security to their NMOS Nodes and/or NMOS Controllers.
+- Please note that this is NOT a specification and therefore none of its contents should be interpreted as normative.
 
 ### Why does it matter?
 
-- This implementation guide should make the job of adding NMOS Security to your implementations easier.
+- This implementation guide makes the job of adding NMOS Security to your implementations easier.
 
 ### How does it work?
 
 - It details what you need to know, and the steps you need to take when implementing security.
-- It includes some recommended tools to help in your implementation
+- It also recommends some tools to help in your implementation
 
 <!-- INTRO-END -->
 
