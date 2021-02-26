@@ -10,7 +10,7 @@ This repository holds the source for this Specification, part of the family of [
 ### What does it do?
 
 - It's a guide for implementers who want to add NMOS Security to their NMOS Nodes and/or NMOS Controllers.
-- Please note that this is NOT a specification and therefore none of its contents should be interpreted as normative.
+- Please note that this guide is informative and therefore is not a substitute for reading the normative specifications.
 
 ### Why does it matter?
 
