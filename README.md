@@ -19,7 +19,7 @@ This repository holds the source for this Implementation Guide, part of the fami
 ### How does it work?
 
 - It details what you need to know, and the steps you need to take when implementing security.
-- It also recommends some tools to help in your implementation
+- It also recommends some tools to help in your implementation.
 
 <!-- INTRO-END -->
 
