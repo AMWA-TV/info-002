@@ -9,17 +9,17 @@ This repository holds the source for this Implementation Guide, part of the fami
 
 ### What does it do?
 
-- It's a guide for implementers who want to add NMOS Security to their NMOS Nodes and/or NMOS Controllers.
+- It's a guide for implementers who want to add security to their NMOS Nodes and/or NMOS Controllers, according to the [IS-10](https://specs.amwa.tv/is-10/) and [BCP-003-02](https://specs.amwa.tv/bcp-003-02/) Specifications for Authorization in NMOS Systems.
 - Please note that this guide is informative and therefore is not a substitute for reading the normative specifications.
 
 ### Why does it matter?
 
-- This implementation guide makes the job of adding NMOS Security to your implementations easier.
+- This guide makes the job of adding authorization to your NMOS implementations easier.
 
 ### How does it work?
 
-- It details what you need to know, and the steps you need to take when implementing security.
-- It also recommends some tools to help in your implementation.
+- It details what you need to know, and the steps you need to take when implementing authorization.
+- It also mentions some tools to help in your implementation.
 
 <!-- INTRO-END -->
 
