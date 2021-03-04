@@ -1,0 +1,22 @@
+{
+  "exp": 1612793516,
+  "iat": 1612793336,
+  "jti": "0f167833-99d0-4284-9980-3e2b2e87f7db",
+  "iss": "https://authorization-server.example.com",
+  "aud": "registry.example.com",
+  "sub": "baf414e8-34b7-4503-a87e-3b4eb916ce3a",
+  "typ": "Bearer",
+  "azp": "30baf617-1744-4c24-9baf-22351bec1a73",
+  "session_state": "d23f319e-79f3-4bce-9956-b53e833153c3",
+  "acr": "1",
+  "scope": "registration",
+  "x-nmos-registration": {
+    "read": [
+      "*"
+    ],
+    "write": [
+      "*"
+    ]
+  },
+  "clientId": "30baf617-1744-4c24-9baf-22351bec1a73"
+}

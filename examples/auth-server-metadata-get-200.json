@@ -1,0 +1,68 @@
+{
+  "authorization_endpoint": "https://authorization-server.example.com/authorize",
+  "code_challenge_methods_supported": [
+    "plain",
+    "S256"
+  ],
+  "grant_types_supported": [
+    "authorization_code",
+    "implicit",
+    "refresh_token",
+    "password",
+    "client_credentials"
+  ],
+  "issuer": "https://authorization-server.example.com",
+  "jwks_uri": "https://authorization-server.example.com/jwks",
+  "registration_endpoint": "https://authorization-server.example.com/register",
+  "request_object_signing_alg_values_supported": [
+    "PS384",
+    "ES384",
+    "RS384",
+    "HS256",
+    "HS512",
+    "ES256",
+    "RS256",
+    "HS384",
+    "ES512",
+    "PS256",
+    "PS512",
+    "RS512",
+    "none"
+  ],
+  "response_types_supported": [
+    "code",
+    "none",
+    "token",
+    "code token"
+  ],
+  "scopes_supported": [
+    "channelmapping",
+    "connection",
+    "events",
+    "node",
+    "query",
+    "registration"
+  ],
+  "token_endpoint": "https://authorization-server.example.com/token",
+  "token_endpoint_auth_methods_supported": [
+    "private_key_jwt",
+    "client_secret_basic",
+    "client_secret_post",
+    "tls_client_auth",
+    "client_secret_jwt"
+  ],
+  "token_endpoint_auth_signing_alg_values_supported": [
+    "PS384",
+    "ES384",
+    "RS384",
+    "HS256",
+    "HS512",
+    "ES256",
+    "RS256",
+    "HS384",
+    "ES512",
+    "PS256",
+    "PS512",
+    "RS512"
+  ]
+}

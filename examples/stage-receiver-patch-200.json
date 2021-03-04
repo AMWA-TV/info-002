@@ -1,0 +1,29 @@
+{
+  "activation": {
+    "activation_time": "1612804428:810443300",
+    "mode": "activate_immediate",
+    "requested_time": null
+  },
+  "master_enable": true,
+  "sender_id": "8d26d68a-93f2-55ff-9495-acbb576897fd",
+  "transport_file": {
+    "data": "v=0\r\no=- 3821785015 3821785015 IN IP4 10.1.0.29\r\ns=Sony Windows Node/sender/v0\r\nt=0 0\r\na=group:DUP PRIMARY SECONDARY\r\nm=video 5004 RTP/AVP 96\r\nc=IN IP4 239.255.255.0/32\r\na=ts-refclk:localmac=5E-21-51-E3-62-D0\r\na=mediaclk:direct=0\r\na=source-filter: incl IN IP4 239.255.255.0 10.1.0.29\r\na=rtpmap:96 raw/90000\r\na=fmtp:96 width=1920; height=1080; exactframerate=25; interlace; sampling=YCbCr-4:2:2; depth=10; colorimetry=BT709; TCS=SDR; PM=2110GPM; SSN=ST2110-20:2017; TP=2110TPN; \r\na=mid:PRIMARY\r\nm=video 5004 RTP/AVP 96\r\nc=IN IP4 239.255.255.1/32\r\na=ts-refclk:localmac=0A-00-27-00-00-0F\r\na=mediaclk:direct=0\r\na=source-filter: incl IN IP4 239.255.255.1 169.254.66.179\r\na=rtpmap:96 raw/90000\r\na=fmtp:96 width=1920; height=1080; exactframerate=25; interlace; sampling=YCbCr-4:2:2; depth=10; colorimetry=BT709; TCS=SDR; PM=2110GPM; SSN=ST2110-20:2017; TP=2110TPN; \r\na=mid:SECONDARY\r\n",
+    "type": "application/sdp"
+  },
+  "transport_params": [
+    {
+      "destination_port": 5004,
+      "interface_ip": "auto",
+      "multicast_ip": "239.255.255.0",
+      "rtp_enabled": true,
+      "source_ip": "10.1.0.29"
+    },
+    {
+      "destination_port": 5004,
+      "interface_ip": "auto",
+      "multicast_ip": "239.255.255.1",
+      "rtp_enabled": true,
+      "source_ip": "169.254.66.179"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "alg": "RS512",
+    "e": "AQAB",
+    "kid": "O4QEicS70s1DWFyt84niI80Z2SLsdNrVyeGwJe8g8qw",
+    "kty": "RSA",
+    "n": "yeSbbHw18xN3hh_VeHpSI01Fcp0xaI1znmWBVkm...",
+    "use": "sig",
+    "x5c": [
+      "MIIFlTCCA32gAwIBAgICEAAwDQYJKoZIhvcNAQ..."
+    ],
+    "x5t": "LD3awp-sYoVbcfwOgB9BRO4HFYQ",
+    "x5t#S256": "yCrclAKahB6SE68rbx5cRwuBZoeTXfW9smoLgt6u9t4"
+  }
+]
