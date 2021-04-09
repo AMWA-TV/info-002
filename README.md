@@ -1,4 +1,4 @@
-# AMWA INFO-002: NMOS Security Implementation Guide \[Work In Progress\]
+# AMWA INFO-002: NMOS Security Implementation Guide
 
 [![Lint Status](https://github.com/AMWA-TV/nmos-template/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-template/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/nmos-template/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-template/actions?query=workflow%3ARender)
