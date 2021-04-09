@@ -1,8 +1,0 @@
-{
-  "activation": {
-    "mode": "activate_immediate"
-  },
-  "action" : {
-    "...": "action data here"
-  }
-}
