@@ -5,7 +5,7 @@
 - [Implementing Authenticated API Calls](Implementing%20Authenticated%20API%20Calls.md)
   - [Node to Authorization Server Interactions](Node%20to%20Authorization%20Server%20Interactions.md)
   - [Node to Registry Interactions (IS-04)](Node%20to%20Registry%20Interactions%20(IS-04).md)
-   - [Controller to Authorization Server Interactions](Controller%20to%20Authorization%20Server%20Interactions.md)
+  - [Controller to Authorization Server Interactions](Controller%20to%20Authorization%20Server%20Interactions.md)
   - [Controller to Registry (IS-04) and Node Interactions (IS-05, IS-08)](Controller%20to%20Registry%20(IS-04)%20and%20Node%20Interactions%20(IS-05,%20IS-08).md)
   - [Event and Tally Interactions (IS-07)](Event%20and%20Tally%20Interactions%20(IS-07).md)
   - [Validating Access Tokens](Validating%20Access%20Tokens.md)
