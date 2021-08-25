@@ -38,4 +38,4 @@ The following four part series of articles gives a good grounding in OAuth 2.0; 
    Case)](https://dzone.com/articles/what-is-zuul)
 
 ## JSON Web Tokens (JWT)
-JSON Web Tokens are the preferred type of token used in IS-10. A familiarity with JWT can be gained from the articles linked in the [OAuth 2.0 section](2.0.%20Prerequisites.md#oauth-20) above, from this [introduction to JWT](https://jwt.io/introduction) and in the [next section](2.1.%20JSON%20Web%20Tokens%20(JWT).md).
+JSON Web Tokens are the preferred type of token used in IS-10. A familiarity with JWT can be gained from the articles linked in the [OAuth 2.0 section](Prerequisites.md#oauth-20) above, from this [introduction to JWT](https://jwt.io/introduction) and in the [next section](JSON%20Web%20Tokens%20(JWT).md).
