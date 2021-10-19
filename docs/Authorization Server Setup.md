@@ -39,7 +39,7 @@ You can get a latest version from the [Keycloak website](https://www.keycloak.or
 - Next, ensure that the Keycloak server trusts the certificate authority which is in use. This can be achieved by following [Keycloak's instructions](https://www.keycloak.org/docs/latest/server_installation/#_truststore), or by adding the certificate to the default Java keystore using a command like the following, before restarting Keycloak.
 
 ```
-keytool -importcert -alias nmosca -file cert.pem -cacerts -storepass changeit
+keytool -importcert -alias nmosca -file cert.pem -trustcacerts -storepass changeit
 ```
 
 ### Enable TLS, Redirects and Discovery
