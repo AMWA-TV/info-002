@@ -1,7 +1,7 @@
 # AMWA INFO-002: NMOS Security Implementation Guide
 
-[![Lint Status](https://github.com/AMWA-TV/nmos-template/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-template/actions?query=workflow%3ALint)
-[![Render Status](https://github.com/AMWA-TV/nmos-template/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-template/actions?query=workflow%3ARender)
+[![Lint Status](https://github.com/AMWA-TV/info-002/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/info-002/actions?query=workflow%3ALint)
+[![Render Status](https://github.com/AMWA-TV/info-002/workflows/Render/badge.svg)](https://github.com/AMWA-TV/info-002/actions?query=workflow%3ARender)
 
 This repository holds the source for this Implementation Guide, part of the family of [Networked Media Open Specifications](https://specs.amwa.tv/nmos) from the [Advanced Media Workflow Association](https://amwa.tv)
 
