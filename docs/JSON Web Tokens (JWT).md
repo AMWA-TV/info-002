@@ -3,7 +3,7 @@ _(c) AMWA 2021, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)_
 
 ## Access Tokens
 
-The format of the [Access Token](https://specs.amwa.tv/is-10/branches/v1.0.x/docs/4.4._Behaviour_-_Access_Tokens.html) used by IS-10 is the JSON Web Tokens (JWT). JWT is an open industry standard method for representing claims securely between services (RFC 7519). The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure, enabling the claims to be digitally signed with `RSASSA-PKCS1-v1_5 using SHA-512`.
+The format of the [Access Token](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html) used by IS-10 is the JSON Web Tokens (JWT). JWT is an open industry standard method for representing claims securely between services (RFC 7519). The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure, enabling the claims to be digitally signed with `RSASSA-PKCS1-v1_5 using SHA-512`.
 
 The Access Token consists of three segments, each being encoded separately using [Base64url Encoding](https://en.wikipedia.org/wiki/Base64#URL_applications "Base64"), and concatenated using periods to produce the JWT:
 
@@ -17,7 +17,7 @@ JWTs can be straightforwardly introspected using tools such as the [JWT.io debug
 
 ### Header
 
-The Header is used to identify which algorithm was used to generate the Signature. In accordance with [IS-10](https://specs.amwa.tv/is-10/branches/v1.0.x/docs/4.4._Behaviour_-_Access_Tokens.html), the `alg` field in the header is set to RS512.
+The Header is used to identify which algorithm was used to generate the Signature. In accordance with [IS-10](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html), the `alg` field in the header is set to RS512.
 
 ```json
 {
@@ -32,7 +32,7 @@ The Payload contains the token claims, including when the token became active, w
 
 #### Registered Claims
 
-The [IS-10 specification](https://specs.amwa.tv/is-10/branches/v1.0.x/docs/4.4._Behaviour_-_Access_Tokens.html#registered-claims) gives details of how NMOS API Clients and Servers use registered claims.
+The [IS-10 specification](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html#registered-claims) gives details of how NMOS API Clients and Servers use registered claims.
 
 #### Private Claims
 

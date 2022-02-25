@@ -18,15 +18,15 @@ You can get a latest version from the [Keycloak website](https://www.keycloak.or
 - In Realm Settings, go to Tokens and select RS512 from the default signature algorithm.
 
 ### Client Scope Config
-- Click Client Scopes and configure one or more [client scopes](https://specs.amwa.tv/is-10/branches/v1.0.x/docs/4.4._Behaviour_-_Access_Tokens.html#registered-claims). For example, create one with a name 'registration' (for the IS-04 Registration API), and a protocol of 'openid-connect'.
+- Click Client Scopes and configure one or more [client scopes](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html#registered-claims). For example, create one with a name 'registration' (for the IS-04 Registration API), and a protocol of 'openid-connect'.
 
 ### Audience Config
-- Within the created client scope, go to the 'Mappers' tab. Add a mapper with a name you choose, with a type of 'Audience'. Make the value of this claim match the intended value of the ['aud' claim](https://specs.amwa.tv/is-10/branches/v1.0.x/docs/4.4._Behaviour_-_Access_Tokens.html#aud).
+- Within the created client scope, go to the 'Mappers' tab. Add a mapper with a name you choose, with a type of 'Audience'. Make the value of this claim match the intended value of the ['aud' claim](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html#aud).
 - In order to overcome the form validation, if the value includes a '*', copy and paste it into the field. If you need multiple audience values (using the array format), create multiple 'Audience' type mappers with different values.
 
 ### Private Claims
-- IS-10 has [defined some private claims](https://specs.amwa.tv/is-10/branches/v1.0.x/docs/4.4._Behaviour_-_Access_Tokens.html#private-claims) which are used to control read/write access to APIs.
-- Within the 'Mappers' tab, add another mapper with a name you choose, but with a type of 'Hardcoded Claim'. Give it a Claim JSON Type of 'JSON', a Claim Name of 'x-nmos-\<api\>' (where '\<api\>' is the API/scope name such as 'registration') and a Claim Value which matches the structure in [the specification](https://specs.amwa.tv/is-10/branches/v1.0.x/docs/4.4._Behaviour_-_Access_Tokens.html#example-x-nmos--claims).
+- IS-10 has [defined some private claims](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html#private-claims) which are used to control read/write access to APIs.
+- Within the 'Mappers' tab, add another mapper with a name you choose, but with a type of 'Hardcoded Claim'. Give it a Claim JSON Type of 'JSON', a Claim Name of 'x-nmos-\<api\>' (where '\<api\>' is the API/scope name such as 'registration') and a Claim Value which matches the structure in [the specification](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html#example-x-nmos--claims).
 - To overcome the validation this needs to be copied and pasted into the field.
 
 ### Repeat for All Scopes
