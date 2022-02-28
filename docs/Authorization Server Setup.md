@@ -11,7 +11,7 @@ However, other Authorization Servers are available, so simply map these configur
 ## Keycloak Setup
 
 ### Install Keycloak
-You can get a latest version from the [Keycloak website](https://www.keycloak.org/getting-started).
+You can get a latest version from the [Keycloak website](https://www.keycloak.org/guides#getting-started).
 
 ### Configure Realms
 - You need to set up a realm to work within (or use the default one for testing).
