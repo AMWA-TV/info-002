@@ -75,3 +75,5 @@ An example Apache Reverse Proxy site configuration with a metadata alias is show
         SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
 </VirtualHost>
 ```
+
+Note that to get the Keycloak server to be able to resolve the client addresses / hostnames, then the Keycloak configuration needs to be changed. Details of the process are [defined here](http://www.keycloak.org/docs/latest/server_installation/index.html#identifying-client-ip-addresses). Without this change, any attempt to register a client as a "Trusted Host" will fail.
