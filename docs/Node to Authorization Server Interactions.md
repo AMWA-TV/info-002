@@ -173,7 +173,7 @@ grant_type=client_credentials
 
 In this request the `client_assertion` is a self-signed JWT and `client_id` is the result from client registration.
 
-Details of the content of the `client_assertion` JWT can be found in [section 2.2 of RFC7523](https://tools.ietf.org/html/rfc7523#section-2.2). Note also, as mentioned in the [Authorization Server Setup page](Authorization Server Setup.md), that the Keycloak authentication server used as an example here is an OpenID Connect server, which places some additional restrictions on the JWT. In particular, the `iss` claim should also be the `client_id`, and the `jti` claim becomes mandatory. See the [OpenID Connect documentation for details and examples](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)
+Details of the content of the `client_assertion` JWT can be found in [section 2.2 of RFC7523](https://tools.ietf.org/html/rfc7523#section-2.2). Note also, as mentioned in the [Authorization Server Setup page](Authorization%20Server%20Setup.md), that the Keycloak authentication server used as an example here is an OpenID Connect server, which places some additional restrictions on the JWT. In particular, the `iss` claim should also be the `client_id`, and the `jti` claim becomes mandatory. See the [OpenID Connect documentation for details and examples](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)
 
 Example token response:
 
