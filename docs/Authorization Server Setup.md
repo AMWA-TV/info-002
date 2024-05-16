@@ -36,7 +36,7 @@ You can get a latest version from the [Keycloak website](https://www.keycloak.or
 ### Set Up Trusted Hosts
 - In Realm Settings, go to Client Registration and Client Registration Policies. Under 'Anonymous Access Policies', enter 'Trusted Hosts' and add '\*.workshop.nmos.tv' (or similar).
 - Go to the 'Clients' menu and edit the 'admin-cli' client. Under Client Scopes, add the newly defined scope(s) above to the 'Optional client scopes' list. This is useful to enable the debug procedure below.
-- Next, ensure that Keycloak trusts the certificate authority which is in use. This can be achieved by following [Keycloak's instructions](https://www.keycloak.org/docs/latest/server_installation/#_truststore), or by adding the certificate to the default Java keystore using a command like the following, before restarting Keycloak.
+- Next, ensure that Keycloak trusts the certificate authority which is in use. This can be achieved by following [Keycloak's instructions](https://www.keycloak.org/server/keycloak-truststore), or by adding the certificate to the default Java keystore using a command like the following, before restarting Keycloak.
 
 ```
 keytool -import -alias nmosca -file cert.pem -cacerts -storepass changeit
@@ -76,4 +76,6 @@ An example Apache Reverse Proxy site configuration with a metadata alias is show
 </VirtualHost>
 ```
 
-Note that to get the Keycloak server to be able to resolve the client addresses / hostnames, then the Keycloak configuration needs to be changed. Details of the process are [defined here](http://www.keycloak.org/docs/latest/server_installation/index.html#identifying-client-ip-addresses). Without this change, any attempt to register a client as a "Trusted Host" will fail.
+Note that to get the Keycloak server to be able to resolve the client addresses / hostnames, then the Keycloak configuration needs to be changed.
+Details of how to set up a reverse proxy with Keycloak can be [found here](https://www.keycloak.org/server/reverseproxy).
+Without this change, any attempt to register a client as a "Trusted Host" will fail.
