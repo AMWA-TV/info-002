@@ -5,7 +5,7 @@ There are a number of steps that need to be considered while [validating the acc
 
 - Check that the JWT is well-formed, such as JWT contains three segments, Header, Payload and Signature, separated by period ('.') characters. Each segment is Base64url encoded.
 - Verify the Signature, using the issuer's public key, to ensure the token has not been tampered with.
-- In event the issuer [public key](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.5._Behaviour_-_Resource_Servers.html#public-keys) is not known, temporarily respond with an HTTP 503 code in order to avoid blocking the incoming authorized request, and then fetch the missing public key from the server metadata's `jwks_uri` endpoint.  The server metadata can be retrieved via the token `iss` claim as specified in [RFC 8414](https://tools.ietf.org/html/rfc8414 "OAuth 2.0 Authorization Server Metadata") section 3.
+- In event the issuer [public key](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.5._Behaviour_-_Resource_Servers.html#public-keys) is not known, respond with an HTTP `503` (Service Unavailable) code in order to avoid blocking the incoming authorized request, and fetch the missing public key from the server metadata's `jwks_uri` endpoint.  The server metadata can be retrieved via the token `iss` claim as specified in [RFC 8414](https://tools.ietf.org/html/rfc8414 "OAuth 2.0 Authorization Server Metadata") section 3.
 - Check the registered claims, such as token expiration `exp` and token audience `aud`.
 - Check the private claims, to verify whether it has permission for accessing the API.
 
