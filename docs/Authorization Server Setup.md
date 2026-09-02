@@ -33,13 +33,14 @@ You can get a latest version from the [Keycloak website](https://www.keycloak.or
 - Repeat the previous three steps for each 'scope' supported. Note that in this limited implementation case you can use the same Claim Value for all 'x-nmos-\<api\>' claims, covering the full range of supported scopes. This is hacky, but provides a simpler proof of concept than the alternative [script provider mechanism](https://www.keycloak.org/docs/latest/server_development/#_script_providers).
 - In Client Scopes, click the Default Client Scopes tab. Move all of the default and optional scopes which are already on the right hand side (enabled) to the left (disabled). Then move all of the created NMOS scopes from the 'Optional Client Scopes' available list, into the 'Assigned Optional Client Scopes' list.
 
-### Set Up Trusted Hosts
-- In Realm Settings, go to Client Registration and Client Registration Policies. Under 'Anonymous Access Policies', enter 'Trusted Hosts' and add '\*.workshop.nmos.tv' (or similar).
+### Set Up Client Registration
+- IS-10 requires that dynamic client registrations requesting the `client_credentials` grant are authenticated, preferably with an [Initial Access Token](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.1._Behaviour_-_Authorization_Servers.html#client-registration). In Keycloak, create one under Clients → Initial access token, and distribute it to Nodes out of band. Leave the Anonymous Access Policies' Trusted Hosts list empty so anonymous registration remains disabled.
+- For workshops or other non-compliant lab setups only, anonymous registration can instead be enabled under Client Registration Policies by adding hosts (for example `*.workshop.nmos.tv`) to Trusted Hosts under 'Anonymous Access Policies'.
 - Go to the 'Clients' menu and edit the 'admin-cli' client. Under Client Scopes, add the newly defined scope(s) above to the 'Optional client scopes' list. This is useful to enable the debug procedure below.
-- Next, ensure that Keycloak trusts the certificate authority which is in use. This can be achieved by following [Keycloak's instructions](https://www.keycloak.org/server/keycloak-truststore), or by adding the certificate to the default Java keystore using a command like the following, before restarting Keycloak.
+- Next, ensure that the Keycloak server trusts the certificate authority which is in use. This can be achieved by following [Keycloak's instructions](https://www.keycloak.org/server/keycloak-truststore), or by adding the certificate to the default Java keystore using a command like the following, before restarting Keycloak.
 
 ```
-keytool -import -alias nmosca -file cert.pem -cacerts -storepass changeit
+keytool -importcert -alias nmosca -file cert.pem -cacerts -storepass changeit
 ```
 
 ### Enable TLS, Redirects and Discovery
@@ -47,20 +48,20 @@ keytool -import -alias nmosca -file cert.pem -cacerts -storepass changeit
 - As Keycloak is an OpenID Connect server, it places the Client Metadata at a different path to the OAuth 2.0 specification. When using an Apache Reverse Proxy this can be overcome by adding an alias for this path.
 - Finally, once Keycloak is set up, suitable DNS records will need to be added to your DNS server in order to enable NMOS discovery.
 
-An example Apache Reverse Proxy site configuration with a metadata alias is shown below. This makes Keycloak available on port 443, forwarding it from port 8082:
+An example Apache Reverse Proxy site configuration with a metadata alias is shown below. This makes Keycloak available on port 443, forwarding it from port 8080:
 
 ```
 <VirtualHost _default_:443>
         <Location />
                 ProxyPreserveHost On
-                ProxyPass https://127.0.0.1:8082/ timeout=30 connectiontimeout=1 max=10 ttl=1 smax=10
-                ProxyPassReverse https://127.0.0.1:8082/
+                ProxyPass http://127.0.0.1:8080/ timeout=30 connectiontimeout=1 max=10 ttl=1 smax=10
+                ProxyPassReverse http://127.0.0.1:8080/
         </Location>
 
         <Location /.well-known/oauth-authorization-server>
                 ProxyPreserveHost On
-                ProxyPass https://127.0.0.1:8082/auth/realms/master/.well-known/openid-configuration timeout=30 connectiontimeout=1 max=10 ttl=1 smax=10
-                ProxyPassReverse https://127.0.0.1:8082/auth/realms/master/.well-known/openid-configuration
+                ProxyPass http://127.0.0.1:8080/realms/master/.well-known/openid-configuration timeout=30 connectiontimeout=1 max=10 ttl=1 smax=10
+                ProxyPassReverse http://127.0.0.1:8080/realms/master/.well-known/openid-configuration
         </Location>
 
         RequestHeader set X-Forwarded-Proto "https"
@@ -68,9 +69,6 @@ An example Apache Reverse Proxy site configuration with a metadata alias is show
         Header set Access-Control-Allow-Origin "*"
 
         SSLEngine on
-        SSLProxyEngine on
-        SSLProxyCheckPeerCN off
-        SSLProxyCheckPeerName off
         SSLCertificateFile     /etc/ssl/certs/ssl-cert-snakeoil.pem
         SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
 </VirtualHost>
@@ -78,4 +76,4 @@ An example Apache Reverse Proxy site configuration with a metadata alias is show
 
 Note that to get the Keycloak server to be able to resolve the client addresses / hostnames, then the Keycloak configuration needs to be changed.
 Details of how to set up a reverse proxy with Keycloak can be [found here](https://www.keycloak.org/server/reverseproxy).
-Without this change, any attempt to register a client as a "Trusted Host" will fail.
+Without this change, any attempt to register a client via anonymous "Trusted Host" policies will fail.
