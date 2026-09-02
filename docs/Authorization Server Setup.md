@@ -35,7 +35,7 @@ You can get a latest version from the [Keycloak website](https://www.keycloak.or
 
 ### Set Up Client Registration
 - IS-10 requires that dynamic client registrations requesting the `client_credentials` grant are authenticated, preferably with an [Initial Access Token](https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.1._Behaviour_-_Authorization_Servers.html#client-registration). In Keycloak, create one under Clients → Initial access token, and distribute it to Nodes out of band. Leave the Anonymous Access Policies' Trusted Hosts list empty so anonymous registration remains disabled.
-- For workshops or other non-compliant lab setups only, anonymous registration can instead be enabled under Client Registration Policies by adding hosts (for example `\*.workshop.nmos.tv`) to Trusted Hosts under 'Anonymous Access Policies'.
+- For workshops or other non-compliant lab setups only, anonymous registration can instead be enabled under Client Registration Policies by adding hosts (for example `*.workshop.nmos.tv`) to Trusted Hosts under 'Anonymous Access Policies'.
 - Go to the 'Clients' menu and edit the 'admin-cli' client. Under Client Scopes, add the newly defined scope(s) above to the 'Optional client scopes' list. This is useful to enable the debug procedure below.
 - Next, ensure that the Keycloak server trusts the certificate authority which is in use. This can be achieved by following [Keycloak's instructions](https://www.keycloak.org/server/keycloak-truststore), or by adding the certificate to the default Java keystore using a command like the following, before restarting Keycloak.
 
