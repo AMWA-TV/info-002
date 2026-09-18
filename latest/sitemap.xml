@@ -3,4 +3,28 @@
       <url>
         <loc>https://specs.amwa.tv/new/info-002/latest/</loc>
       </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/info-002/latest/Overview/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/info-002/latest/Prerequisites/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/info-002/latest/Authorization%20Server%20Setup/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/info-002/latest/Implementing%20Authenticated%20API%20Calls/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/info-002/latest/Node%20to%20Authorization%20Server%20Interactions/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/info-002/latest/Controller%20to%20Authorization%20Server%20Interactions/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/info-002/latest/Validating%20Access%20Tokens/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/new/info-002/latest/Development%20Resources/</loc>
+      </url>
 </urlset>
