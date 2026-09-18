@@ -1,0 +1,540 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://specs.amwa.tv/new/info-002/latest/Authorization%20Server%20Setup/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.62">
+    
+    
+      
+        <title>Authorization Server Setup - AMWA INFO-002: NMOS Security Implementation Guide</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.ce62732f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/amwa-branding.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#authorization-server-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="AMWA INFO-002: NMOS Security Implementation Guide" class="md-header__button md-logo" aria-label="AMWA INFO-002: NMOS Security Implementation Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AMWA INFO-002: NMOS Security Implementation Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Authorization Server Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/AMWA-TV/info-002" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/info-002
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="AMWA INFO-002: NMOS Security Implementation Guide" class="md-nav__button md-logo" aria-label="AMWA INFO-002: NMOS Security Implementation Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    AMWA INFO-002: NMOS Security Implementation Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AMWA-TV/info-002" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/info-002
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AMWA INFO-002: NMOS Security Implementation Guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Overview
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keycloak-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Keycloak Setup
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keycloak Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Install Keycloak
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-realms" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Configure Realms
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-scope-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Client Scope Config
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audience-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Audience Config
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Private Claims
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeat-for-all-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Repeat for All Scopes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-client-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Set Up Client Registration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-tls-redirects-and-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Enable TLS, Redirects and Discovery
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="authorization-server-setup">Authorization Server Setup</h1>
+<p><em>(c) AMWA 2021, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)</em></p>
+<p>IS-10 is all about authorization, so you will need an Authorization Server from which you request Access Tokens. Here you will find some detail on setting up an Authorization Server to provide the correct 'flavor' of Access Tokens to your NMOS Nodes.</p>
+<h2 id="overview">Overview</h2>
+<p>IS-10 will work with any OAuth 2.0 or OpenID compliant Authorization Server. 
+For the purposes of this guide we have used Keycloak which is an open source Identity and Access Management solution.
+However, other Authorization Servers are available, so simply map these configuration steps to your current, favorite Auth Server.</p>
+<h2 id="keycloak-setup">Keycloak Setup</h2>
+<h3 id="install-keycloak">Install Keycloak</h3>
+<p>You can get a latest version from the <a href="https://www.keycloak.org/guides#getting-started">Keycloak website</a>.</p>
+<h3 id="configure-realms">Configure Realms</h3>
+<ul>
+<li>You need to set up a realm to work within (or use the default one for testing).</li>
+<li>In Realm Settings, go to Tokens and select RS512 from the default signature algorithm.</li>
+</ul>
+<h3 id="client-scope-config">Client Scope Config</h3>
+<ul>
+<li>Click Client Scopes and configure one or more <a href="https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html#registered-claims">client scopes</a>. For example, create one with a name 'registration' (for the IS-04 Registration API), and a protocol of 'openid-connect'.</li>
+</ul>
+<h3 id="audience-config">Audience Config</h3>
+<ul>
+<li>Within the created client scope, go to the 'Mappers' tab. Add a mapper with a name you choose, with a type of 'Audience'. Make the value of this claim match the intended value of the <a href="https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html#aud">'aud' claim</a>.</li>
+<li>In order to overcome the form validation, if the value includes a '*', copy and paste it into the field. If you need multiple audience values (using the array format), create multiple 'Audience' type mappers with different values.</li>
+</ul>
+<h3 id="private-claims">Private Claims</h3>
+<ul>
+<li>IS-10 has <a href="https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html#private-claims">defined some private claims</a> which are used to control read/write access to APIs.</li>
+<li>Within the 'Mappers' tab, add another mapper with a name you choose, but with a type of 'Hardcoded Claim'. Give it a Claim JSON Type of 'JSON', a Claim Name of 'x-nmos-\&lt;api&gt;' (where '\&lt;api&gt;' is the API/scope name such as 'registration') and a Claim Value which matches the structure in <a href="https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.4._Behaviour_-_Access_Tokens.html#example-x-nmos--claims">the specification</a>.</li>
+<li>To overcome the validation this needs to be copied and pasted into the field.</li>
+</ul>
+<h3 id="repeat-for-all-scopes">Repeat for All Scopes</h3>
+<ul>
+<li>Repeat the previous three steps for each 'scope' supported. Note that in this limited implementation case you can use the same Claim Value for all 'x-nmos-\&lt;api&gt;' claims, covering the full range of supported scopes. This is hacky, but provides a simpler proof of concept than the alternative <a href="https://www.keycloak.org/docs/latest/server_development/#_script_providers">script provider mechanism</a>.</li>
+<li>In Client Scopes, click the Default Client Scopes tab. Move all of the default and optional scopes which are already on the right hand side (enabled) to the left (disabled). Then move all of the created NMOS scopes from the 'Optional Client Scopes' available list, into the 'Assigned Optional Client Scopes' list.</li>
+</ul>
+<h3 id="set-up-client-registration">Set Up Client Registration</h3>
+<ul>
+<li>IS-10 requires that dynamic client registrations requesting the <code>client_credentials</code> grant are authenticated, preferably with an <a href="https://specs.amwa.tv/is-10/releases/v1.0.0/docs/4.1._Behaviour_-_Authorization_Servers.html#client-registration">Initial Access Token</a>. In Keycloak, create one under Clients → Initial access token, and distribute it to Nodes out of band. Leave the Anonymous Access Policies' Trusted Hosts list empty so anonymous registration remains disabled.</li>
+<li>For workshops or other non-compliant lab setups only, anonymous registration can instead be enabled under Client Registration Policies by adding hosts (for example <code>*.workshop.nmos.tv</code>) to Trusted Hosts under 'Anonymous Access Policies'.</li>
+<li>Go to the 'Clients' menu and edit the 'admin-cli' client. Under Client Scopes, add the newly defined scope(s) above to the 'Optional client scopes' list. This is useful to enable the debug procedure below.</li>
+<li>Next, ensure that the Keycloak server trusts the certificate authority which is in use. This can be achieved by following <a href="https://www.keycloak.org/server/keycloak-truststore">Keycloak's instructions</a>, or by adding the certificate to the default Java keystore using a command like the following, before restarting Keycloak.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>keytool -importcert -alias nmosca -file cert.pem -cacerts -storepass changeit
+</code></pre></div>
+<h3 id="enable-tls-redirects-and-discovery">Enable TLS, Redirects and Discovery</h3>
+<ul>
+<li>In order to enable Keycloak for TLS (HTTPS) we would suggest using a Reverse Proxy such as the Apache web server.</li>
+<li>As Keycloak is an OpenID Connect server, it places the Client Metadata at a different path to the OAuth 2.0 specification. When using an Apache Reverse Proxy this can be overcome by adding an alias for this path.</li>
+<li>Finally, once Keycloak is set up, suitable DNS records will need to be added to your DNS server in order to enable NMOS discovery.</li>
+</ul>
+<p>An example Apache Reverse Proxy site configuration with a metadata alias is shown below. This makes Keycloak available on port 443, forwarding it from port 8080:</p>
+<div class="highlight"><pre><span></span><code>&lt;VirtualHost _default_:443&gt;
+        &lt;Location /&gt;
+                ProxyPreserveHost On
+                ProxyPass http://127.0.0.1:8080/ timeout=30 connectiontimeout=1 max=10 ttl=1 smax=10
+                ProxyPassReverse http://127.0.0.1:8080/
+        &lt;/Location&gt;
+
+        &lt;Location /.well-known/oauth-authorization-server&gt;
+                ProxyPreserveHost On
+                ProxyPass http://127.0.0.1:8080/realms/master/.well-known/openid-configuration timeout=30 connectiontimeout=1 max=10 ttl=1 smax=10
+                ProxyPassReverse http://127.0.0.1:8080/realms/master/.well-known/openid-configuration
+        &lt;/Location&gt;
+
+        RequestHeader set X-Forwarded-Proto "https"
+        RequestHeader set X-Forwarded-Port "443"
+        Header set Access-Control-Allow-Origin "*"
+
+        SSLEngine on
+        SSLCertificateFile     /etc/ssl/certs/ssl-cert-snakeoil.pem
+        SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+&lt;/VirtualHost&gt;
+</code></pre></div>
+<p>Note that to get the Keycloak server to be able to resolve the client addresses / hostnames, then the Keycloak configuration needs to be changed.
+Details of how to set up a reverse proxy with Keycloak can be <a href="https://www.keycloak.org/server/reverseproxy">found here</a>.
+Without this change, any attempt to register a client via anonymous "Trusted Host" policies will fail.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":[],"redirect":null,"search":"../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8dcc8e9c.min.js"></script>
+      
+        <script src="../javascripts/json-viewer.js"></script>
+      
+        <script src="../javascripts/amwa-branding.js"></script>
+      
+    
+  </body>
+</html>
