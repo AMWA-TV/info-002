@@ -1,30 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://specs.amwa.tv/new/info-002/latest/</loc>
+        <loc>https://specs.amwa.tv/info-002/latest/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/info-002/latest/Overview/</loc>
+        <loc>https://specs.amwa.tv/info-002/latest/404/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/info-002/latest/Prerequisites/</loc>
+        <loc>https://specs.amwa.tv/info-002/latest/Authorization%20Server%20Setup/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/info-002/latest/Authorization%20Server%20Setup/</loc>
+        <loc>https://specs.amwa.tv/info-002/latest/Controller%20to%20Authorization%20Server%20Interactions/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/info-002/latest/Implementing%20Authenticated%20API%20Calls/</loc>
+        <loc>https://specs.amwa.tv/info-002/latest/Controller%20to%20Registry%20(IS-04)%20and%20Node%20Interactions%20(IS-05,%20IS-08)/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/info-002/latest/Node%20to%20Authorization%20Server%20Interactions/</loc>
+        <loc>https://specs.amwa.tv/info-002/latest/Development%20Resources/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/info-002/latest/Controller%20to%20Authorization%20Server%20Interactions/</loc>
+        <loc>https://specs.amwa.tv/info-002/latest/Event%20and%20Tally%20Interactions%20(IS-07)/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/info-002/latest/Validating%20Access%20Tokens/</loc>
+        <loc>https://specs.amwa.tv/info-002/latest/Implementing%20Authenticated%20API%20Calls/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/info-002/latest/Development%20Resources/</loc>
+        <loc>https://specs.amwa.tv/info-002/latest/JSON%20Web%20Tokens%20(JWT)/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/info-002/latest/Node%20to%20Authorization%20Server%20Interactions/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/info-002/latest/Node%20to%20Registry%20Interactions%20(IS-04)/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/info-002/latest/Overview/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/info-002/latest/Prerequisites/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/info-002/latest/Validating%20Access%20Tokens/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/info-002/latest/images/</loc>
       </url>
 </urlset>
