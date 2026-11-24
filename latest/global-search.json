@@ -75,12 +75,6 @@
       "repository": "AMWA-TV/info-002"
     },
     {
-      "title": "README",
-      "url": "https://specs.amwa.tv/info-002/latest/images/",
-      "text": "README README README - AMWA INFO-002: NMOS Security Implementation Guide Skip to content README This directory is for images used in documentation",
-      "repository": "AMWA-TV/info-002"
-    },
-    {
       "title": "AMWA INFO-002: NMOS Security Implementation Guide",
       "url": "https://specs.amwa.tv/info-002/latest/",
       "text": "AMWA INFO-002: NMOS Security Implementation Guide AMWA INFO-002: NMOS Security Implementation Guide What does it do? Why does it matter? How does it work? Getting started AMWA INFO-002: NMOS Security Implementation Guide - AMWA INFO-002: NMOS Security Implementation Guide Skip to content AMWA INFO-002: NMOS Security Implementation Guide This repository holds the source for this Implementation Guide, part of the family of Networked Media Open Specifications from the Advanced Media Workflow Association What does it do? It's a guide for implementers who want to add security to their NMOS Nodes and/or NMOS Controllers, according to the IS-10 , BCP-003-01 , BCP-003-02 and BCP-003-03 specifications. Please note that this guide is informative and therefore is not a substitute for reading the normative specifications. Why does it matter? This guide makes the job of adding security to your NMOS implementations easier. How does it work? It details what you need to know, and the steps you need to take when implementing security. It also mentions some tools to help in your implementation. Getting started There is more information about the NMOS Specifications and their GitHub repos at https://specs.amwa.tv/nmos .",
